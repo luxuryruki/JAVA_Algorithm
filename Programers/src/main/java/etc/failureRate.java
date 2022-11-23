@@ -4,16 +4,36 @@ public class failureRate {
     public static void main(String[] args) {
         int[] stages = new int[]{4,4,4,4,4};
         int N = 4;
-        int[] answer = new int[]{};
-        System.out.println(answer);;
+        int[] answer = {};
+        answer = new int[N];
 
-        /*
-        1. 실패율 넣을 배열 생성 / 유저 숫자 넣을 변수생성
-        2. 스테이지 오름차순 정렬
-        3. for문으로 1stage부터 실패한 사람 수 / (stage 길이 - 이전 실패한 사람 수) 로 실패율 넣기
-        */
-
-        int[] failureRate = new int[N+1];
+        double[] failureRate = new double[N+2];
+        int[] failureNum = new int[N+2];
         int userNum = stages.length;
+        for(int i : stages){
+            failureNum[i] += 1 ;
+        }
+        for(int j = 1; j <= N+1; j++){
+            failureRate[j] = (double) failureNum[j]/userNum;
+            userNum -= failureNum[j];
+        }
+
+        double max;
+        for(int j = 1 ; j < N+1 ; j++){
+            max = -0.1;
+            for(int i = 1; i < N+1 ; i++){
+                if(failureRate[i] > max){
+                    max = failureRate[i];
+                    answer[j-1] = i;
+                }
+            }
+            failureRate[answer[j-1]] = -1;
+        }
+        for(int i : answer){
+            System.out.println(i);
+        }
+
+
+
     }
 }
