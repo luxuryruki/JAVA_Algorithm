@@ -20,24 +20,22 @@ public class Disguise {
                 hashMap.put(clothe[1],hashMap.get(clothe[1])+1);
             }
         }
-
-        if(hashMap.size() > 1){ // size가 3개 이상일 때 단순 곱하기로 해결 안됨 ex) 2, 2, 1 개 일 경우 5(1개씩) 4, 2, 2(2개씩 착용) , 4(3개씩 착용))
-            int total = 1;
-            for(String key : hashMap.keySet()){
-                int value = hashMap.get(key);
-                total *= value;
-            }
-            answer = total + clothes.length;
-        }else{
-            answer = clothes.length;
+        int total = 1;
+        for(String key : hashMap.keySet()){
+            int value = hashMap.get(key)+1; // 선택하지 않을수 있는 옵션 포함
+            total *= value;
         }
-
-
-
-
-
-
-
+        answer = total -1; // 아무것도 선택하지않는 옵션은 포함되어있지 않기때문에 그 경우를 빼기위한 -1
+//        if(hashMap.size() > 1){ // size가 3개 이상일 때 단순 곱하기로 해결 안됨 ex) 2, 2, 1 개 일 경우 5(1개씩) 4, 2, 2(2개씩 착용) , 4(3개씩 착용))
+//            int total = 1;
+//            for(String key : hashMap.keySet()){
+//                int value = hashMap.get(key);
+//                total *= value;
+//            }
+//            answer = total + clothes.length;
+//        }else{
+//            answer = clothes.length;
+//        }
         System.out.println(answer);
     }
 }
