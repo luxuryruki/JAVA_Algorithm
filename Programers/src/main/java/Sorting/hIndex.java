@@ -18,6 +18,7 @@ public class hIndex {
         while(arr[idx-1] >= idx ){
             answer = idx;
             idx++;
+            if(idx > citations.length) break;
         }
 
 

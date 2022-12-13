@@ -2,14 +2,9 @@ package etc;
 
 public class Joystick {
     public static void main(String[] args) {
-        String name = "BBBAAABBBB";
+        String name = "BBAA";
         int answer = 0;
 
-//        char[] arr = new char[26];
-//        for(int i=0; i<arr.length;i++){
-//            arr[i] = (char) (65+i);
-//            System.out.println(i + " : " + arr[i]);
-//        }
         //위치 카운트
         int cnt = 0;
 
@@ -17,20 +12,21 @@ public class Joystick {
         int current = 0;
         int min = len-1;
 
-        for(int i =1;i < len ; i++){
+        for(int i =0;i < len ; i++){
             if(name.charAt(i) != 'A') {
-                cnt = len - i + (current*2);
-                min = Math.min(min,cnt);
-                cnt = (len -i) * 2 + current;
-                min = Math.min(min,cnt);
+                cnt = i;
+                min = Math.min(min,(len - cnt) + current * 2);
+                min = Math.min(min,(len - cnt) * 2 + current);
                 current = i;
-
             }
         }
-        System.out.println(min);
 
 
-        //알파멧 카운트
+        System.out.println(answer);
+
+
+
+        //알파벳 카운트
         for(int i = 0; i < len;i++){
             char a = 'A';
             cnt = 0;
@@ -46,7 +42,7 @@ public class Joystick {
             }
 
         }
-//        System.out.println(answer);
+        System.out.println(answer);
 
     }
 }
