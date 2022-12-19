@@ -6,7 +6,7 @@ import java.util.Queue;
 
 public class MockTest {
     public static void main(String[] args) {
-        int[] answer = new int[]{1,3,2,4,2};
+        int[] answers = new int[]{1,3,2,4,2};
 
 
         //찍기번호 que에 넣기
@@ -31,7 +31,7 @@ public class MockTest {
         int cntA = 0;
         int cntB = 0;
         int cntC = 0;
-        for(int i : answer){
+        for(int i : answers){
             if(queA.peek() == i) cntA++;
             if(queB.peek() == i) cntB++;
             if(queC.peek() == i) cntC++;
@@ -52,5 +52,11 @@ public class MockTest {
         if(cntC == max){
             result.add(3);
         }
+
+        int[] answer = new int[result.size()];
+        for(int i=0;i <result.size();i++){
+            answer[i] = result.get(i);
+        }
+        System.out.println(answer);
     }
 }
