@@ -3,7 +3,7 @@ Algorithm Study
 
 # Utility Functions
 
-### Math`
+### Math
 Math.max(a, b): 두 값 중 큰 값을 반환합니다.   
 Math.min(a, b): 두 값 중 작은 값을 반환합니다.   
 Math.abs(a): 절대값을 반환합니다.   
