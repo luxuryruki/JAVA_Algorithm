@@ -1,6 +1,6 @@
-package com.example.datastrructure.linkedlist;
+package com.example.datastrructure.linkedlist.basic;
 
-public class DoublyNode implements Node{
+public class DoublyNode implements Node {
     int value;
     DoublyNode previous;
     DoublyNode next;

@@ -1,8 +1,8 @@
-package com.example.datastrructure.linkedlist;
+package com.example.datastrructure.linkedlist.basic;
 
-public class SinglyLinkedList {
+public class DoublyLinkedList {
     public static void main(String[] args) {
-        SinglyNode head = new SinglyNode(1);
+        DoublyNode head = new DoublyNode(1);
         head.append(2);
         head.append(3);
         head.append(4);

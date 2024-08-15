@@ -1,6 +1,6 @@
-package com.example.datastrructure.linkedlist;
+package com.example.datastrructure.linkedlist.basic;
 
-public class SinglyNode implements Node{
+public class SinglyNode implements Node {
     int value;
     SinglyNode next;
 

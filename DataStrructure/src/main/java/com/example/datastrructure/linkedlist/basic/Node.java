@@ -1,4 +1,4 @@
-package com.example.datastrructure.linkedlist;
+package com.example.datastrructure.linkedlist.basic;
 
 public interface Node {
      void append(int a);
