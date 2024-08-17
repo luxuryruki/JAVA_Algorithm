@@ -4,6 +4,9 @@ package com.example.datastrructure.linkedlist.improved;
 public class SinglyLinkedList {
     SinglyNode header;
 
+    public SinglyNode getHeader(){
+        return this.header;
+    }
     public SinglyLinkedList() {
         header = new SinglyNode();
     }

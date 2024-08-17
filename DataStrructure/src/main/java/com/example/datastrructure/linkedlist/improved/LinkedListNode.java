@@ -2,12 +2,21 @@ package com.example.datastrructure.linkedlist.improved;
 
 public class LinkedListNode {
     public static void main(String[] args){
-        SinglyLinkedList ll = new SinglyLinkedList();
-        ll.append(1);
-        ll.append(2);
-        ll.append(3);
-        ll.delete(2);
-        ll.append(4);
-        ll.retrieve();
+        SinglyLinkedList sll = new SinglyLinkedList();
+        sll.append(1);
+        sll.append(2);
+        sll.append(3);
+        sll.delete(2);
+        sll.append(4);
+        sll.retrieve();
+
+
+        DoublyLinkedList dll = new DoublyLinkedList();
+        dll.append(1);
+        dll.append(2);
+        dll.append(3);
+        dll.delete(2);
+        dll.append(4);
+        dll.retrieve();
     }
 }

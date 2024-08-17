@@ -5,6 +5,7 @@ public class DoublyLinkedList {
         DoublyNode head = new DoublyNode(1);
         head.append(2);
         head.append(3);
+        head.delete(2);
         head.append(4);
 
         head.retrieve();

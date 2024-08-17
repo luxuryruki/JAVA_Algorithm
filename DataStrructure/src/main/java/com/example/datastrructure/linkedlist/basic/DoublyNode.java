@@ -25,8 +25,8 @@ public class DoublyNode implements Node {
         DoublyNode n = this;
         while (n.next != null){
             if(n.next.value == d){
-                n.next = n.next.next;
                 n.next.next.previous = n;
+                n.next = n.next.next;
             }else {
                 n = n.next;
             }
@@ -36,7 +36,7 @@ public class DoublyNode implements Node {
     @Override
     public void retrieve() {
         DoublyNode n = this;
-        while (n.next != null){
+        while (n != null){
             if(n.previous != null){
                 System.out.print(n.previous.value  + " , ");
             }else {
