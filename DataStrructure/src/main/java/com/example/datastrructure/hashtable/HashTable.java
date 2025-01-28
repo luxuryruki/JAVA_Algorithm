@@ -13,6 +13,7 @@ import java.util.LinkedList;
 * 3. 해시테이블 기능정의
 *   - getHashCode : 해시값 생성
 *   - convertToIndex : 해시값을 이용해 인덱스 생성
+*   - search : 키값을 이용한 노드 검색
 *   - put : 키밸류 삽입
 *   - get : 밸류 확인
 *
@@ -47,12 +48,17 @@ public class HashTable {
     public void put(String key, String value) {
         int hashCode = getHashCode(key);
         int index = convertToIndex(hashCode);
+
+        //해당 인덱스에 데이터리스트 있는지 확인, 없으면 생성
         LinkedList<Node> list = data[index];
         if(list == null) {
             list = new LinkedList<>();
             data[index] = list;
         }
+
+        //노드 검색
         Node node = searchKey(list, key);
+        //노드가 없으면 노드 생성 후 삽입, 있으면 value 업데이트
         if(node == null) {
             list.addLast(new Node(key,value));
         }else {
