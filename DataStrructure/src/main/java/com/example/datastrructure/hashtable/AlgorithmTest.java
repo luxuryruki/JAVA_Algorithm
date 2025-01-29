@@ -19,7 +19,16 @@ public class AlgorithmTest {
 //        System.out.println(algorithmService.isPermutation("abcdefghij", "abcdefghijl")); // false, 길이 다름
 
         //3
-        System.out.println(algorithmService.replaceSpaces1("Mr John Smith"));
-        System.out.println(algorithmService.replaceSpaces1("Mr Jo hn S m i t h"));
+//        System.out.println(algorithmService.replaceSpaces1("Mr John Smith"));
+//        System.out.println(algorithmService.replaceSpaces1("Mr Jo hn S m i t h"));
+
+
+        System.out.println(algorithmService.isEditedOnlyOnce("pale", "pae"));   // Expected: true  | Actual: false  (1번 삭제)
+        System.out.println(algorithmService.isEditedOnlyOnce("pale", "pake"));  // Expected: true  | Actual: false  (1번 수정)
+        System.out.println(algorithmService.isEditedOnlyOnce("pale", "paless")); // Expected: false | Actual: true  (2번 삽입)
+        System.out.println(algorithmService.isEditedOnlyOnce("pale", "bales")); // Expected: false | Actual: true  (1번 수정 + 1번 삽입)
+        System.out.println(algorithmService.isEditedOnlyOnce("pale", "paleee"));// Expected: false | Actual: true  (2번 삽입)
+        System.out.println(algorithmService.isEditedOnlyOnce("pale", "plae"));  // Expected: false | Actual: true  (글자 위치 변경)
+
     }
 }
