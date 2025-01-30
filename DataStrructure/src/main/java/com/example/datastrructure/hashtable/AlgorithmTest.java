@@ -23,12 +23,31 @@ public class AlgorithmTest {
 //        System.out.println(algorithmService.replaceSpaces1("Mr Jo hn S m i t h"));
 
 
-        System.out.println(algorithmService.isEditedOnlyOnce("pale", "pae"));   // Expected: true  | Actual: false  (1번 삭제)
-        System.out.println(algorithmService.isEditedOnlyOnce("pale", "pake"));  // Expected: true  | Actual: false  (1번 수정)
-        System.out.println(algorithmService.isEditedOnlyOnce("pale", "paless")); // Expected: false | Actual: true  (2번 삽입)
-        System.out.println(algorithmService.isEditedOnlyOnce("pale", "bales")); // Expected: false | Actual: true  (1번 수정 + 1번 삽입)
-        System.out.println(algorithmService.isEditedOnlyOnce("pale", "paleee"));// Expected: false | Actual: true  (2번 삽입)
-        System.out.println(algorithmService.isEditedOnlyOnce("pale", "plae"));  // Expected: false | Actual: true  (글자 위치 변경)
+//        System.out.println(algorithmService.isEditedOnlyOnce("pale", "pae"));   // Expected: true  | Actual: false  (1번 삭제)
+//        System.out.println(algorithmService.isEditedOnlyOnce("pale", "pake"));  // Expected: true  | Actual: false  (1번 수정)
+//        System.out.println(algorithmService.isEditedOnlyOnce("pale", "paless")); // Expected: false | Actual: true  (2번 삽입)
+//        System.out.println(algorithmService.isEditedOnlyOnce("pale", "bales")); // Expected: false | Actual: true  (1번 수정 + 1번 삽입)
+//        System.out.println(algorithmService.isEditedOnlyOnce("pale", "paleee"));// Expected: false | Actual: true  (2번 삽입)
+//        System.out.println(algorithmService.isEditedOnlyOnce("pale", "plae"));  // Expected: false | Actual: true  (글자 위치 변경)
 
+
+//        System.out.println(algorithmService.compressString("aabbccaa"));
+//        System.out.println(algorithmService.compressString("abcdd"));
+//        int[][] input = {
+//                {1,0,0,4},
+//                {0,5,8,0},
+//                {0,6,7,0},
+//                {2,0,0,3},
+//        };
+//
+//        System.out.println(algorithmService.rotate(input));
+
+        int[][] input2 = {
+                {1,1,1,4},
+                {0,5,8,1},
+                {1,6,7,1},
+                {2,1,1,3},
+        };
+        System.out.println(algorithmService.setZeros(input2));
     }
 }

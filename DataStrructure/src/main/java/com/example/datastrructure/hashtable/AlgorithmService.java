@@ -166,6 +166,97 @@ public class AlgorithmService {
             }
         }
         return true;
-
     }
+
+    public String compressString(String input){
+        input = input.replace(" ","");
+        String compressedString = "";
+        int compressedNo = 1;
+        for(int i = 0; i < input.length()-1; i++){
+            if(compressedNo == 1){
+                compressedString += input.charAt(i);
+            }
+            if(input.charAt(i) == input.charAt(i+1)){
+                compressedNo++;
+            }else{
+                compressedString += compressedNo;
+                compressedNo = 1;
+            }
+
+            if(i == input.length()-2) compressedString += compressedNo;
+        }
+        return input.length() >= compressedString.length() ? compressedString : input;
+    }
+
+
+    // 난이도 별 5개
+    public String rotate(int[][] matrix){
+        if(matrix.length == 0 || matrix[0].length != matrix.length) return "회전할 수 없는 매트릭스";
+        int temp = 0;
+        for(int s = 0, e = matrix.length - 1; s < e; s++, e--){
+            for(int i = s, j = e; i<j; i++,j--){
+                temp = matrix[s][i];
+                System.out.println(temp);
+                matrix[s][i] = matrix[s][j];
+                matrix[s][j] = matrix[e][j];
+                matrix[e][j] = matrix[e][i];
+                matrix[e][i] = temp;
+            }
+        }
+        return matrixToString(matrix);
+    }
+
+    private String matrixToString(int[][] matrix) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < matrix.length; i++) {
+            sb.append("[ ");
+            for (int j = 0; j < matrix[i].length; j++) {
+                sb.append(matrix[i][j]);
+                if (j < matrix[i].length - 1) {
+                    sb.append(", ");
+                }
+            }
+            sb.append(" ]\n"); // 행 개행
+        }
+        return sb.toString();
+    }
+
+    public String setZeros(int[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        boolean[] rowFlags = new boolean[rows];
+        boolean[] colFlags = new boolean[cols];
+
+        // 1. 0이 있는 위치를 기록
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == 0) {
+                    rowFlags[i] = true;  // 해당 행을 0으로 설정
+                    colFlags[j] = true;  // 해당 열을 0으로 설정
+                }
+            }
+        }
+
+        // 2. 기록된 행을 0으로 설정
+        for (int i = 0; i < rows; i++) {
+            if (rowFlags[i]) {
+                for (int j = 0; j < cols; j++) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        // 3. 기록된 열을 0으로 설정
+        for (int j = 0; j < cols; j++) {
+            if (colFlags[j]) {
+                for (int i = 0; i < rows; i++) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        return matrixToString(matrix);
+    }
+
 }
