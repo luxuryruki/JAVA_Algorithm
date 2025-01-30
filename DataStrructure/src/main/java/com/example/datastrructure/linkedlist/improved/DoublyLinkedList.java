@@ -8,8 +8,8 @@ public class DoublyLinkedList {
         header = new DoublyNode();
     }
     public void append(int a){
-        DoublyNode end = new DoublyNode();
-        end.value = a;
+        DoublyNode end = new DoublyNode(a);
+//        end.value = a;
         DoublyNode node = header;
         while (node.next != null){
             node = node.next;
