@@ -58,4 +58,49 @@ public class AlgorithmService {
         }
         return node2;
     }
+
+    public SinglyNode partition(SinglyLinkedList ll, int x){
+        SinglyNode head = ll.getHeader();
+
+        SinglyNode beforeStart = null;
+        SinglyNode beforeEnd = null;
+        SinglyNode afterStart = null;
+        SinglyNode afterEnd = null;
+        SinglyNode centerNode = null;
+
+
+        while (head.next != null){
+            if(head.value == x){
+                centerNode = head;
+            }else if(head.value < x){
+                if(beforeStart ==null){
+                    beforeStart = head;
+                    beforeEnd = beforeStart;
+                }else {
+                    beforeEnd.next = head;
+                    beforeEnd = head;
+                }
+            }else {
+                if(afterStart == null){
+                    afterStart = head;
+                    afterEnd = afterStart;
+
+                }else {
+                    afterEnd.next = head;
+                    afterEnd = head;
+                }
+            }
+            head = head.next;
+        }
+        if(beforeStart == null){
+            centerNode.next = afterStart;
+            return centerNode;
+        }else{
+            beforeEnd.next = centerNode;
+            centerNode.next = afterStart;
+            return beforeStart;
+        }
+    }
+
+
 }
