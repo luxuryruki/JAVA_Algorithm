@@ -33,7 +33,29 @@ public class AlgorithmService {
             }
         }
         return dataList.size() ;
+    }
+
+    public SinglyNode getKthFromLast(SinglyLinkedList ll, int k){
+        SinglyNode node = ll.getHeader();
+        return getK(node, k);
 
 
+    }
+
+    private SinglyNode getK(SinglyNode node, int k){
+
+        SinglyNode node1 = node;
+        SinglyNode node2 = node;
+
+        for(int i = 0; i< k ; i++){
+            if(node1 == null) return null;
+            node1 = node1.next;
+        }
+
+        while(node1 != null ){
+            node1 = node1.next;
+            node2 = node2.next;
+        }
+        return node2;
     }
 }

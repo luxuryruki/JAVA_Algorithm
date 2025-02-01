@@ -9,11 +9,20 @@ package com.example.datastrructure.linkedlist.improved;
 public class SinglyLinkedList {
     private SinglyNode header;
 
+    private int size;
+
+
     public SinglyNode getHeader(){
         return this.header;
     }
+
+    public int size(){
+        return this.size;
+    }
     public SinglyLinkedList() {
+
         this.header = new SinglyNode();
+        this.size = 0;
     }
     public void append(int a){
         SinglyNode end = new SinglyNode(a);
@@ -21,6 +30,7 @@ public class SinglyLinkedList {
         SinglyNode node = header;
         while (node.next != null){
             node = node.next;
+            size++;
         }
         node.next = end;
     }
@@ -30,6 +40,8 @@ public class SinglyLinkedList {
         while (node.next != null){
             if(node.next.value == a){
                 node.next = node.next.next;
+                size--;
+                break;
             }else {
                 node = node.next;
             }
