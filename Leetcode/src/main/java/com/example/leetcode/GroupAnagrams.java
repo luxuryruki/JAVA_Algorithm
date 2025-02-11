@@ -1,9 +1,6 @@
 package com.example.leetcode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class GroupAnagrams {
     // input - one String array
@@ -48,6 +45,25 @@ public class GroupAnagrams {
             result.add(entry.getValue()); // value를 가져와 추가
         }
         return result;
+    }
+
+
+    public List<List<String>> groupAnagrams2(String[] strs) {
+
+        Map<String,List<String>> map = new HashMap<>();
+
+        for(String str : strs){
+            char[] c = str.toCharArray();
+            Arrays.sort(c);
+            String sortedStr = new String(c);
+
+            if(!map.containsKey(sortedStr)){
+                map.put(sortedStr,new ArrayList<>());
+            }
+            map.get(sortedStr).add(str);
+        }
+
+        return new ArrayList<>(map.values());
     }
 
     public static void main(String[] args) {
