@@ -1,3 +1,5 @@
+package com.example.leetcode;
+
 public class IsAnagram {
     public boolean isAnagram(String s, String t) {
         //check number of char

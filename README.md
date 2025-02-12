@@ -38,6 +38,12 @@ Integer.parseInt(s): 문자열을 정수로 변환합니다.
 Integer.toString(i): 정수를 문자열로 변환합니다.   
 Integer.compare(x, y): 두 정수를 비교합니다.   
 Integer.valueOf(s): 문자열을 Integer 객체로 변환합니다.   
+Integer.MAX_VALUE : Integer 최대값 / 2,147,483,647 (2^31 - 1) // 32비트
+Integer.MIN_VALUE : Integer 최소값 / -2,147,483,648 (-2^31) //32 비트
+
+### Long
+Long.MAX_VALUE : Long 최대값 / -9,223,372,036,854,775,808 (2^63 - 1)  // 64 비트
+Long.MIN_VALUE : Long 최소값 / -9,223,372,036,854,775,808 (-2^63)  // 64 비트
 
 ### Files
 Files.readAllBytes(path): 파일의 모든 바이트를 읽어들입니다.   
